@@ -24,16 +24,18 @@ public class Project {
     private String description;
     private int creationDate;
     private int completionDate;
+    private String imageURL;
     
     @DocumentReference // like a foreign key constraint, asks db to store just update ids, and updates are in a separate collection
     private List<Entry> projectEntries;
 
     // custom constructor w/ name, descrip, creationDate and completionDate
-    public Project(String name, String description, int creationDate, int completionDate) {
+    public Project(String name, String description, int creationDate, int completionDate, String imageURL) {
         this.name = name;
         this.description = description;
         this.creationDate = creationDate;
         this.completionDate = completionDate;
         this.projectEntries = new ArrayList<Entry>();
+        this.imageURL = imageURL;
     }
 }

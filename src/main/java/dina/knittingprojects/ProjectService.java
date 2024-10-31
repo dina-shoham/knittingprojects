@@ -19,8 +19,8 @@ public class ProjectService {
         return repository.findProjectByName(name);
     }
 
-    public Project createProject(String name, String description, int creationDate, int completionDate) {
-        Project project = repository.insert(new Project(name, description, creationDate, completionDate)); //insert returns the object you are inserting
+    public Project createProject(String name, String description, int creationDate, int completionDate, String imageURL) {
+        Project project = repository.insert(new Project(name, description, creationDate, completionDate, imageURL)); //insert returns the object you are inserting
         return project;
     }
 

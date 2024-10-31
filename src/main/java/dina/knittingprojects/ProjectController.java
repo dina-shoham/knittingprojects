@@ -42,8 +42,9 @@ public class ProjectController {
         String description = payload.get("description");
         int creationDate = Integer.parseInt(payload.get("creationDate"));
         int completionDate = Integer.parseInt(payload.get("completionDate"));
+        String imageURL = payload.get("imageURL");
 
-        return new ResponseEntity<Project>(service.createProject(name, description, creationDate, completionDate), HttpStatus.CREATED);
+        return new ResponseEntity<Project>(service.createProject(name, description, creationDate, completionDate, imageURL), HttpStatus.CREATED);
     }
 
     // delete a project by its name
