@@ -1,5 +1,6 @@
 package dina.knittingprojects;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bson.types.ObjectId;
@@ -26,4 +27,13 @@ public class Project {
     
     @DocumentReference // like a foreign key constraint, asks db to store just update ids, and updates are in a separate collection
     private List<Entry> projectEntries;
+
+    // custom constructor w/ name, descrip, creationDate and completionDate
+    public Project(String name, String description, int creationDate, int completionDate) {
+        this.name = name;
+        this.description = description;
+        this.creationDate = creationDate;
+        this.completionDate = completionDate;
+        this.projectEntries = new ArrayList<Entry>();
+    }
 }

@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface ProjectRepository extends MongoRepository<Project, ObjectId> {
     Optional<Project> findProjectById(ObjectId id);
     Optional<Project> findProjectByName(String name); // spring data mongodb does the rest
+    long deleteProjectByName(String name);
 }
